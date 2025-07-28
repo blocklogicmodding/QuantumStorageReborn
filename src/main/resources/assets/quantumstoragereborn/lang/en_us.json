@@ -26,5 +26,7 @@
   "gui.quantumstoragereborn.iron_crate": "Iron Crate",
   "gui.quantumstoragereborn.gold_crate": "Gold Crate",
   "gui.quantumstoragereborn.diamond_crate": "Diamond Crate",
-  "gui.quantumstoragereborn.netherite_crate": "Netherite Crate"
+  "gui.quantumstoragereborn.netherite_crate": "Netherite Crate",
+
+  "tooltip.quantumstoragereborn.crate.contains_items": "Not empty! Something's stashed in here."
 }

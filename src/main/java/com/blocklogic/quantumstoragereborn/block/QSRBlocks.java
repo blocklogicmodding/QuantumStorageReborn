@@ -3,6 +3,7 @@ package com.blocklogic.quantumstoragereborn.block;
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
 import com.blocklogic.quantumstoragereborn.block.custom.*;
 import com.blocklogic.quantumstoragereborn.item.QSRItems;
+import com.blocklogic.quantumstoragereborn.item.custom.CrateItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
 public class QSRBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(QuantumStorageReborn.MODID);
 
-    public static final DeferredBlock<Block> COPPER_CRATE = registerBlock("copper_crate",
+    public static final DeferredBlock<Block> COPPER_CRATE = registerCrateBlock("copper_crate",
             () -> new CopperCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -25,7 +26,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> IRON_CRATE = registerBlock("iron_crate",
+    public static final DeferredBlock<Block> IRON_CRATE = registerCrateBlock("iron_crate",
             () -> new IronCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -33,7 +34,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> GOLD_CRATE = registerBlock("gold_crate",
+    public static final DeferredBlock<Block> GOLD_CRATE = registerCrateBlock("gold_crate",
             () -> new GoldCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -41,7 +42,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> DIAMOND_CRATE = registerBlock("diamond_crate",
+    public static final DeferredBlock<Block> DIAMOND_CRATE = registerCrateBlock("diamond_crate",
             () -> new DiamondCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -49,7 +50,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> NETHERITE_CRATE = registerBlock("netherite_crate",
+    public static final DeferredBlock<Block> NETHERITE_CRATE = registerCrateBlock("netherite_crate",
             () -> new NetheriteCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -95,8 +96,18 @@ public class QSRBlocks {
         return toReturn;
     }
 
+    private static <T extends Block> DeferredBlock<T> registerCrateBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerCrateBlockItem(name, toReturn);
+        return toReturn;
+    }
+
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         QSRItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> void registerCrateBlockItem(String name, DeferredBlock<T> block) {
+        QSRItems.ITEMS.register(name, () -> new CrateItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
