@@ -17,5 +17,10 @@ public class QSRItemModeProvider extends ItemModelProvider {
         basicItem(QSRItems.GOLD_RANGE_EXTENDER.get());
         basicItem(QSRItems.DIAMOND_RANGE_EXTENDER.get());
         basicItem(QSRItems.NETHERITE_RANGE_EXTENDER.get());
+
+        basicItem(QSRItems.IRON_CRATE_UPGRADE.get());
+        basicItem(QSRItems.GOLD_CRATE_UPGRADE.get());
+        basicItem(QSRItems.DIAMOND_CRATE_UPGRADE.get());
+        basicItem(QSRItems.NETHERITE_CRATE_UPGRADE.get());
     }
 }

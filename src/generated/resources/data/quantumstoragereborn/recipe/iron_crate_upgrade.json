@@ -5,20 +5,20 @@
     "#": {
       "item": "minecraft:iron_ingot"
     },
-    "O": {
-      "tag": "minecraft:planks"
+    "G": {
+      "tag": "c:glass_panes"
     },
-    "X": {
-      "tag": "c:chests"
+    "R": {
+      "item": "minecraft:redstone"
     }
   },
   "pattern": [
-    "#O#",
-    "OXO",
-    "#O#"
+    "#G#",
+    "GRG",
+    "#G#"
   ],
   "result": {
     "count": 1,
-    "id": "quantumstoragereborn:iron_crate"
+    "id": "quantumstoragereborn:iron_crate_upgrade"
   }
 }

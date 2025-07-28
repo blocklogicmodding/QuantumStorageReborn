@@ -5,20 +5,20 @@
     "#": {
       "item": "minecraft:netherite_ingot"
     },
-    "O": {
-      "tag": "minecraft:planks"
+    "G": {
+      "tag": "c:glass_panes"
     },
-    "X": {
-      "tag": "c:chests"
+    "R": {
+      "item": "minecraft:redstone"
     }
   },
   "pattern": [
-    "#O#",
-    "OXO",
-    "#O#"
+    "#G#",
+    "GRG",
+    "#G#"
   ],
   "result": {
     "count": 1,
-    "id": "quantumstoragereborn:netherite_crate"
+    "id": "quantumstoragereborn:netherite_crate_upgrade"
   }
 }

@@ -34,6 +34,11 @@ public class QSRCreativeTab {
                         output.accept(QSRItems.GOLD_RANGE_EXTENDER);
                         output.accept(QSRItems.DIAMOND_RANGE_EXTENDER);
                         output.accept(QSRItems.NETHERITE_RANGE_EXTENDER);
+
+                        output.accept(QSRItems.IRON_CRATE_UPGRADE);
+                        output.accept(QSRItems.GOLD_CRATE_UPGRADE);
+                        output.accept(QSRItems.DIAMOND_CRATE_UPGRADE);
+                        output.accept(QSRItems.NETHERITE_CRATE_UPGRADE);
                     }).build());
 
     public static void register (IEventBus eventBus) {

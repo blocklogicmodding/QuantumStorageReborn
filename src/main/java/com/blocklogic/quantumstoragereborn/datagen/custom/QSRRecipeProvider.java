@@ -82,8 +82,8 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("#O#")
                 .define('O', ItemTags.PLANKS)
                 .define('#', Items.IRON_INGOT)
-                .define('X', QSRBlocks.COPPER_CRATE.get())
-                .unlockedBy("has_copper_crate", has(QSRBlocks.COPPER_CRATE.get()))
+                .define('X', Tags.Items.CHESTS)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.GOLD_CRATE.get())
@@ -92,8 +92,8 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("#O#")
                 .define('O', ItemTags.PLANKS)
                 .define('#', Items.GOLD_INGOT)
-                .define('X', QSRBlocks.IRON_CRATE.get())
-                .unlockedBy("has_iron_crate", has(QSRBlocks.IRON_CRATE.get()))
+                .define('X', Tags.Items.CHESTS)
+                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.DIAMOND_CRATE.get())
@@ -102,8 +102,8 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("#O#")
                 .define('O', ItemTags.PLANKS)
                 .define('#', Items.DIAMOND)
-                .define('X', QSRBlocks.GOLD_CRATE.get())
-                .unlockedBy("has_gold_crate", has(QSRBlocks.GOLD_CRATE.get()))
+                .define('X', Tags.Items.CHESTS)
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.NETHERITE_CRATE.get())
@@ -112,8 +112,8 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("#O#")
                 .define('O', ItemTags.PLANKS)
                 .define('#', Items.NETHERITE_INGOT)
-                .define('X', QSRBlocks.DIAMOND_CRATE.get())
-                .unlockedBy("has_diamond_crate", has(QSRBlocks.DIAMOND_CRATE.get()))
+                .define('X', Tags.Items.CHESTS)
+                .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
                 .save(recipeOutput);
 
         //Items
@@ -155,6 +155,47 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('P', Items.ENDER_PEARL)
                 .define('#', QSRItems.GOLD_RANGE_EXTENDER.get())
                 .unlockedBy("has_diamond_range_extender", has(QSRItems.GOLD_RANGE_EXTENDER.get()))
+                .save(recipeOutput);
+
+        // Upgrade Bases - Used for upgrading crates in-place
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.IRON_CRATE_UPGRADE.get())
+                .pattern("#G#")
+                .pattern("GRG")
+                .pattern("#G#")
+                .define('G', Tags.Items.GLASS_PANES)
+                .define('#', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.GOLD_CRATE_UPGRADE.get())
+                .pattern("#G#")
+                .pattern("GRG")
+                .pattern("#G#")
+                .define('G', Tags.Items.GLASS_PANES)
+                .define('#', Items.GOLD_INGOT)
+                .define('R', Items.REDSTONE)
+                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.DIAMOND_CRATE_UPGRADE.get())
+                .pattern("#G#")
+                .pattern("GRG")
+                .pattern("#G#")
+                .define('G', Tags.Items.GLASS_PANES)
+                .define('#', Items.DIAMOND)
+                .define('R', Items.REDSTONE)
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.NETHERITE_CRATE_UPGRADE.get())
+                .pattern("#G#")
+                .pattern("GRG")
+                .pattern("#G#")
+                .define('G', Tags.Items.GLASS_PANES)
+                .define('#', Items.NETHERITE_INGOT)
+                .define('R', Items.REDSTONE)
+                .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
                 .save(recipeOutput);
     }
 }
