@@ -18,8 +18,8 @@ public class DiamondCrateScreen extends AbstractContainerScreen<DiamondCrateMenu
 
     public DiamondCrateScreen(DiamondCrateMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
-        this.imageWidth = 230;
-        this.imageHeight = 232;
+        this.imageWidth = 285;
+        this.imageHeight = 251;
         this.inventoryLabelY = this.imageHeight - 96;
         this.inventoryLabelX = 62;
     }

@@ -31,7 +31,7 @@ public class QSRBlockEntities {
 
     public static final Supplier<BlockEntityType<DiamondCrateBlockEntity>> DIAMOND_CRATE_BE =
             BLOCK_ENTITIES.register("diamond_crate_be", () -> BlockEntityType.Builder.of(
-                    DiamondCrateBlockEntity::new, QSRBlocks.GOLD_CRATE.get()).build(null));
+                    DiamondCrateBlockEntity::new, QSRBlocks.DIAMOND_CRATE.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
