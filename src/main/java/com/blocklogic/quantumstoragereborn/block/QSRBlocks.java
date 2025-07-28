@@ -1,6 +1,9 @@
 package com.blocklogic.quantumstoragereborn.block;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
+import com.blocklogic.quantumstoragereborn.block.custom.CopperCrateBlock;
+import com.blocklogic.quantumstoragereborn.block.custom.GoldCrateBlock;
+import com.blocklogic.quantumstoragereborn.block.custom.IronCrateBlock;
 import com.blocklogic.quantumstoragereborn.item.QSRItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -17,7 +20,7 @@ public class QSRBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(QuantumStorageReborn.MODID);
 
     public static final DeferredBlock<Block> COPPER_CRATE = registerBlock("copper_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new CopperCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WOOD)
@@ -25,7 +28,7 @@ public class QSRBlocks {
             ));
 
     public static final DeferredBlock<Block> IRON_CRATE = registerBlock("iron_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new IronCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WOOD)
@@ -33,7 +36,7 @@ public class QSRBlocks {
             ));
 
     public static final DeferredBlock<Block> GOLD_CRATE = registerBlock("gold_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new GoldCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WOOD)

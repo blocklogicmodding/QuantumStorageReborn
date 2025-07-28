@@ -1,6 +1,6 @@
 package com.blocklogic.quantumstoragereborn.block.custom;
 
-import com.blocklogic.quantumstoragereborn.entity.custom.CopperCrateBlockEntity;
+import com.blocklogic.quantumstoragereborn.entity.custom.GoldCrateBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -22,11 +22,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class CopperCrateBlock extends BaseEntityBlock {
+public class GoldCrateBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 14, 15);
-    public static final MapCodec<CopperCrateBlock> CODEC = simpleCodec(CopperCrateBlock::new);
+    public static final MapCodec<GoldCrateBlock> CODEC = simpleCodec(GoldCrateBlock::new);
 
-    public CopperCrateBlock(Properties properties) {
+    public GoldCrateBlock(Properties properties) {
         super(properties);
     }
 
@@ -48,15 +48,15 @@ public class CopperCrateBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new CopperCrateBlockEntity(blockPos, blockState);
+        return new GoldCrateBlockEntity(blockPos, blockState);
     }
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if (level.getBlockEntity(pos) instanceof CopperCrateBlockEntity copperCrateBlockEntity) {
+        if (level.getBlockEntity(pos) instanceof GoldCrateBlockEntity goldCrateBlockEntity) {
             if (!level.isClientSide()) {
-                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(copperCrateBlockEntity,
-                        Component.translatable("gui.quantumstoragereborn.copper_crate")), pos);
+                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(goldCrateBlockEntity,
+                        Component.translatable("gui.quantumstoragereborn.gold_crate")), pos);
                 return ItemInteractionResult.SUCCESS;
             }
         }
@@ -66,8 +66,8 @@ public class CopperCrateBlock extends BaseEntityBlock {
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         if(state.getBlock() != newState.getBlock()) {
-            if(level.getBlockEntity(pos) instanceof CopperCrateBlockEntity copperCrateBlockEntity) {
-                copperCrateBlockEntity.drops();
+            if(level.getBlockEntity(pos) instanceof GoldCrateBlockEntity goldCrateBlockEntity) {
+                goldCrateBlockEntity.drops();
                 level.updateNeighbourForOutputSignal(pos, this);
             }
         }

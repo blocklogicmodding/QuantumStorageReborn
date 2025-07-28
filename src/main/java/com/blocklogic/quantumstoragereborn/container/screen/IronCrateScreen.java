@@ -1,23 +1,23 @@
 package com.blocklogic.quantumstoragereborn.container.screen;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
-import com.blocklogic.quantumstoragereborn.container.menu.CopperCrateMenu;
+import com.blocklogic.quantumstoragereborn.container.menu.IronCrateMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class CopperCrateScreen extends AbstractContainerScreen<CopperCrateMenu> {
+public class IronCrateScreen extends AbstractContainerScreen<IronCrateMenu> {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(
-            QuantumStorageReborn.MODID, "textures/gui/copper_crate_gui.png");
+            QuantumStorageReborn.MODID, "textures/gui/iron_crate_gui.png");
     private static final ResourceLocation TITLE_BG = ResourceLocation.fromNamespaceAndPath(
             QuantumStorageReborn.MODID, "textures/gui/menu_title_background.png");
 
-    public CopperCrateScreen(CopperCrateMenu menu, Inventory playerInventory, Component title) {
+    public IronCrateScreen(IronCrateMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
         this.imageWidth = 176;
-        this.imageHeight = 162;
+        this.imageHeight = 216;
         this.inventoryLabelY = this.imageHeight - 96;
     }
 

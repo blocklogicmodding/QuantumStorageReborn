@@ -17,5 +17,7 @@
   "block.quantumstoragereborn.quantum_core": "Quantum Core",
   "block.quantumstoragereborn.trashcan": "Trashcan",
 
-  "gui.quantumstoragereborn.copper_crate": "Copper Crate"
+  "gui.quantumstoragereborn.copper_crate": "Copper Crate",
+  "gui.quantumstoragereborn.iron_crate": "Iron Crate",
+  "gui.quantumstoragereborn.gold_crate": "Gold Crate"
 }

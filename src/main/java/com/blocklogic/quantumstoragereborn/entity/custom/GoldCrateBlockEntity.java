@@ -1,6 +1,6 @@
 package com.blocklogic.quantumstoragereborn.entity.custom;
 
-import com.blocklogic.quantumstoragereborn.container.menu.CopperCrateMenu;
+import com.blocklogic.quantumstoragereborn.container.menu.GoldCrateMenu;
 import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -21,8 +21,8 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
 
-public class CopperCrateBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler inventory = new ItemStackHandler(27) {
+public class GoldCrateBlockEntity extends BlockEntity implements MenuProvider {
+    public final ItemStackHandler inventory = new ItemStackHandler(84) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -32,8 +32,8 @@ public class CopperCrateBlockEntity extends BlockEntity implements MenuProvider 
         }
     };
 
-    public CopperCrateBlockEntity(BlockPos pos, BlockState blockState) {
-        super(QSRBlockEntities.COPPER_CRATE_BE.get(), pos, blockState);
+    public GoldCrateBlockEntity(BlockPos pos, BlockState blockState) {
+        super(QSRBlockEntities.GOLD_CRATE_BE.get(), pos, blockState);
     }
 
     @Override
@@ -50,13 +50,13 @@ public class CopperCrateBlockEntity extends BlockEntity implements MenuProvider 
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("gui.quantumstoragereborn.copper_crate");
+        return Component.translatable("gui.quantumstoragereborn.gold_crate");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new CopperCrateMenu(i, inventory, this);
+        return new GoldCrateMenu(i, inventory, this);
     }
 
     public void drops() {

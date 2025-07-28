@@ -1,4 +1,33 @@
 package com.blocklogic.quantumstoragereborn.container;
 
+import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
+import com.blocklogic.quantumstoragereborn.container.menu.CopperCrateMenu;
+import com.blocklogic.quantumstoragereborn.container.menu.GoldCrateMenu;
+import com.blocklogic.quantumstoragereborn.container.menu.IronCrateMenu;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.MenuType;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.network.IContainerFactory;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+
 public class QSRMenuTypes {
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, QuantumStorageReborn.MODID);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<CopperCrateMenu>> COPPER_CRATE_MENU = registerMenuType("copper_crate_menu", CopperCrateMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<IronCrateMenu>> IRON_CRATE_MENU = registerMenuType("iron_crate_menu", IronCrateMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<GoldCrateMenu>> GOLD_CRATE_MENU = registerMenuType("gold_crate_menu", GoldCrateMenu::new);
+
+    private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
+        return MENUS.register(name, () -> IMenuTypeExtension.create(factory));
+    }
+
+    public static void register(IEventBus eventBus) {
+        MENUS.register(eventBus);
+    }
 }

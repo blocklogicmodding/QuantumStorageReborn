@@ -2,7 +2,7 @@ package com.blocklogic.quantumstoragereborn.container.menu;
 
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
-import com.blocklogic.quantumstoragereborn.entity.custom.CopperCrateBlockEntity;
+import com.blocklogic.quantumstoragereborn.entity.custom.GoldCrateBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -14,24 +14,24 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
-public class CopperCrateMenu extends AbstractContainerMenu {
-    public final CopperCrateBlockEntity blockEntity;
+public class GoldCrateMenu extends AbstractContainerMenu {
+    public final GoldCrateBlockEntity blockEntity;
     private final Level level;
 
-    public CopperCrateMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
+    public GoldCrateMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
         this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()));
     }
 
-    public CopperCrateMenu(int containerId, Inventory inv, BlockEntity blockEntity) {
-        super(QSRMenuTypes.COPPER_CRATE_MENU.get(), containerId);
-        this.blockEntity = ((CopperCrateBlockEntity) blockEntity);
+    public GoldCrateMenu(int containerId, Inventory inv, BlockEntity blockEntity) {
+        super(QSRMenuTypes.GOLD_CRATE_MENU.get(), containerId);
+        this.blockEntity = ((GoldCrateBlockEntity) blockEntity);
         this.level = inv.player.level();
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 9; col++) {
+        for (int row = 0; row < 7; row++) {
+            for (int col = 0; col < 12; col++) {
                 this.addSlot(new SlotItemHandler(this.blockEntity.inventory, col + row * 9,
                         8 + col * 18, 8 + row * 18));
             }
@@ -46,7 +46,7 @@ public class CopperCrateMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int CRATE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private static final int CRATE_INVENTORY_SLOT_COUNT = 27;
+    private static final int CRATE_INVENTORY_SLOT_COUNT = 84;
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
@@ -83,20 +83,20 @@ public class CopperCrateMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, QSRBlocks.COPPER_CRATE.get());
+                player, QSRBlocks.GOLD_CRATE.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; i++) {
             for (int l = 0; l < 9; l++) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 77 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 35 + l * 18, 147 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; i++) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 135));
+            this.addSlot(new Slot(playerInventory, i, 35 + i * 18, 206));
         }
     }
 }

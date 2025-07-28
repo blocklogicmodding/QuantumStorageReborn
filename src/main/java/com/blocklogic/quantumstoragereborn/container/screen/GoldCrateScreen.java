@@ -1,24 +1,25 @@
 package com.blocklogic.quantumstoragereborn.container.screen;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
-import com.blocklogic.quantumstoragereborn.container.menu.CopperCrateMenu;
+import com.blocklogic.quantumstoragereborn.container.menu.GoldCrateMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class CopperCrateScreen extends AbstractContainerScreen<CopperCrateMenu> {
+public class GoldCrateScreen extends AbstractContainerScreen<GoldCrateMenu> {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(
-            QuantumStorageReborn.MODID, "textures/gui/copper_crate_gui.png");
+            QuantumStorageReborn.MODID, "textures/gui/gold_crate_gui.png");
     private static final ResourceLocation TITLE_BG = ResourceLocation.fromNamespaceAndPath(
             QuantumStorageReborn.MODID, "textures/gui/menu_title_background.png");
 
-    public CopperCrateScreen(CopperCrateMenu menu, Inventory playerInventory, Component title) {
+    public GoldCrateScreen(GoldCrateMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
-        this.imageWidth = 176;
-        this.imageHeight = 162;
+        this.imageWidth = 230;
+        this.imageHeight = 232;
         this.inventoryLabelY = this.imageHeight - 96;
+        this.inventoryLabelX = 35;
     }
 
     @Override
@@ -35,7 +36,7 @@ public class CopperCrateScreen extends AbstractContainerScreen<CopperCrateMenu> 
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
-        guiGraphics.blit(TITLE_BG, x, y - 21, 0, 0, 176, 19);
+        guiGraphics.blit(TITLE_BG, x + 27, y - 21, 0, 0, 176, 19);
     }
 
     @Override
