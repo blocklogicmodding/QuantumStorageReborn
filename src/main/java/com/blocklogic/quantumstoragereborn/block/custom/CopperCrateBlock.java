@@ -2,6 +2,8 @@ package com.blocklogic.quantumstoragereborn.block.custom;
 
 import com.blocklogic.quantumstoragereborn.component.QSRDataComponents;
 import com.blocklogic.quantumstoragereborn.entity.custom.CopperCrateBlockEntity;
+import com.blocklogic.quantumstoragereborn.item.QSRItems;
+import com.blocklogic.quantumstoragereborn.util.CrateUpgradeHandler;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -61,6 +63,16 @@ public class CopperCrateBlock extends BaseEntityBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if (stack.getItem() == QSRItems.IRON_CRATE_UPGRADE.get()) {
+            if (!level.isClientSide()) {
+                boolean upgraded = CrateUpgradeHandler.performUpgrade(level, pos, state, player, hand);
+                if (upgraded) {
+                    return ItemInteractionResult.SUCCESS;
+                }
+            }
+            return ItemInteractionResult.SUCCESS;
+        }
+
         if (level.getBlockEntity(pos) instanceof CopperCrateBlockEntity copperCrateBlockEntity) {
             if (!level.isClientSide()) {
                 ((ServerPlayer) player).openMenu(new SimpleMenuProvider(copperCrateBlockEntity,
