@@ -4,6 +4,7 @@ import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
 import com.blocklogic.quantumstoragereborn.container.screen.*;
 import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
+import com.blocklogic.quantumstoragereborn.entity.custom.*;
 import com.blocklogic.quantumstoragereborn.item.QSRCreativeTab;
 import com.blocklogic.quantumstoragereborn.item.QSRItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -42,6 +43,12 @@ public class QuantumStorageReborn {
         QSRCreativeTab.register(modEventBus);
         QSRBlockEntities.register(modEventBus);
         QSRMenuTypes.register(modEventBus);
+
+        modEventBus.addListener(CopperCrateBlockEntity::registerCapabilities);
+        modEventBus.addListener(IronCrateBlockEntity::registerCapabilities);
+        modEventBus.addListener(GoldCrateBlockEntity::registerCapabilities);
+        modEventBus.addListener(DiamondCrateBlockEntity::registerCapabilities);
+        modEventBus.addListener(NetheriteCrateBlockEntity::registerCapabilities);
 
         NeoForge.EVENT_BUS.register(this);
     }

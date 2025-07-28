@@ -17,6 +17,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
@@ -57,6 +59,16 @@ public class DiamondCrateBlockEntity extends BlockEntity implements MenuProvider
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
         return new DiamondCrateMenu(i, inventory, this);
+    }
+
+    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, QSRBlockEntities.DIAMOND_CRATE_BE.get(),
+                (blockEntity, direction) -> {
+                    if (blockEntity instanceof DiamondCrateBlockEntity diamondCrateBlockEntity) {
+                        return diamondCrateBlockEntity.inventory;
+                    }
+                    return null;
+                });
     }
 
     public void drops() {

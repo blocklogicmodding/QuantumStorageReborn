@@ -3,6 +3,7 @@ package com.blocklogic.quantumstoragereborn.entity.custom;
 import com.blocklogic.quantumstoragereborn.container.menu.CopperCrateMenu;
 import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -17,6 +18,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
@@ -57,6 +61,16 @@ public class CopperCrateBlockEntity extends BlockEntity implements MenuProvider 
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
         return new CopperCrateMenu(i, inventory, this);
+    }
+
+    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, QSRBlockEntities.COPPER_CRATE_BE.get(),
+                (blockEntity, direction) -> {
+                    if (blockEntity instanceof CopperCrateBlockEntity copperCrateBlockEntity) {
+                        return copperCrateBlockEntity.inventory;
+                    }
+                    return null;
+                });
     }
 
     public void drops() {
