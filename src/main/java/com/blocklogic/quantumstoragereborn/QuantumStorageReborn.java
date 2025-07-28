@@ -1,6 +1,7 @@
 package com.blocklogic.quantumstoragereborn;
 
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
+import com.blocklogic.quantumstoragereborn.component.QSRDataComponents;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
 import com.blocklogic.quantumstoragereborn.container.screen.*;
 import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
@@ -43,6 +44,7 @@ public class QuantumStorageReborn {
         QSRCreativeTab.register(modEventBus);
         QSRBlockEntities.register(modEventBus);
         QSRMenuTypes.register(modEventBus);
+        QSRDataComponents.register(modEventBus);
 
         modEventBus.addListener(CopperCrateBlockEntity::registerCapabilities);
         modEventBus.addListener(IronCrateBlockEntity::registerCapabilities);

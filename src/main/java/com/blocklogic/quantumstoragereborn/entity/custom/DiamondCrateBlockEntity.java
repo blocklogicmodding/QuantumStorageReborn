@@ -1,5 +1,6 @@
 package com.blocklogic.quantumstoragereborn.entity.custom;
 
+import com.blocklogic.quantumstoragereborn.component.QSRDataComponents;
 import com.blocklogic.quantumstoragereborn.container.menu.DiamondCrateMenu;
 import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
 import net.minecraft.core.BlockPos;
@@ -15,6 +16,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
@@ -22,6 +24,7 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class DiamondCrateBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler inventory = new ItemStackHandler(120) {
@@ -69,6 +72,14 @@ public class DiamondCrateBlockEntity extends BlockEntity implements MenuProvider
                     }
                     return null;
                 });
+    }
+
+    public void restoreInventoryData(QSRDataComponents.InventoryData inventoryData) {
+        List<ItemStack> items = inventoryData.items();
+        for (int i = 0; i < Math.min(items.size(), inventory.getSlots()); i++) {
+            inventory.setStackInSlot(i, items.get(i).copy());
+        }
+        setChanged();
     }
 
     public void drops() {

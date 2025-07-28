@@ -1,9 +1,9 @@
 package com.blocklogic.quantumstoragereborn.entity.custom;
 
+import com.blocklogic.quantumstoragereborn.component.QSRDataComponents;
 import com.blocklogic.quantumstoragereborn.container.menu.CopperCrateMenu;
 import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -12,18 +12,18 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class CopperCrateBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler inventory = new ItemStackHandler(27) {
@@ -73,13 +73,23 @@ public class CopperCrateBlockEntity extends BlockEntity implements MenuProvider 
                 });
     }
 
-    public void drops() {
-        SimpleContainer inv = new SimpleContainer(inventory.getSlots());
-        for(int i = 0; i < inventory.getSlots(); i++) {
-            inv.setItem(i, inventory.getStackInSlot(i));
+    public void restoreInventoryData(QSRDataComponents.InventoryData inventoryData) {
+        List<ItemStack> items = inventoryData.items();
+        for (int i = 0; i < Math.min(items.size(), inventory.getSlots()); i++) {
+            inventory.setStackInSlot(i, items.get(i).copy());
         }
+        setChanged();
+    }
 
-        Containers.dropContents(this.level, this.worldPosition, inv);
+    public void drops() {
+        if (level == null || level.isClientSide()) return;
+
+        for (int i = 0; i < inventory.getSlots(); i++) {
+            ItemStack stack = inventory.getStackInSlot(i);
+            if (!stack.isEmpty()) {
+                Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), stack);
+            }
+        }
     }
 
     @Nullable
