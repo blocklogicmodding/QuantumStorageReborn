@@ -16,15 +16,22 @@ public class QSRLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        dropSelf(QSRBlocks.QUANTUM_ITEM_CELL.get());
+        dropSelf(QSRBlocks.QUANTUM_FLUID_CELL.get());
+        dropSelf(QSRBlocks.QUANTUM_CORE.get());
+        dropSelf(QSRBlocks.TRASHCAN.get());
+
+        dropSelf(QSRBlocks.ACACIA_COPPER_CRATE.get());
+        dropSelf(QSRBlocks.ACACIA_IRON_CRATE.get());
+        dropSelf(QSRBlocks.ACACIA_GOLD_CRATE.get());
+        dropSelf(QSRBlocks.ACACIA_DIAMOND_CRATE.get());
+        dropSelf(QSRBlocks.ACACIA_NETHERITE_CRATE.get());
+
         dropSelf(QSRBlocks.OAK_COPPER_CRATE.get());
         dropSelf(QSRBlocks.OAK_IRON_CRATE.get());
         dropSelf(QSRBlocks.OAK_GOLD_CRATE.get());
         dropSelf(QSRBlocks.OAK_DIAMOND_CRATE.get());
         dropSelf(QSRBlocks.OAK_NETHERITE_CRATE.get());
-        dropSelf(QSRBlocks.QUANTUM_ITEM_CELL.get());
-        dropSelf(QSRBlocks.QUANTUM_FLUID_CELL.get());
-        dropSelf(QSRBlocks.QUANTUM_CORE.get());
-        dropSelf(QSRBlocks.TRASHCAN.get());
     }
 
     @Override

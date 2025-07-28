@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": {
-			"model": "quantumstoragereborn:block/oak_gold_crate"
+			"model": "quantumstoragereborn:block/crates/oak/oak_gold_crate"
 		}
 	}
 }

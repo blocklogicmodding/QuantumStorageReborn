@@ -64,6 +64,57 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
                 .save(recipeOutput);
 
+        //Acacia Crates
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.ACACIA_COPPER_CRATE.get())
+                .pattern("OOO")
+                .pattern("#X#")
+                .pattern("OOO")
+                .define('O', Items.ACACIA_PLANKS)
+                .define('#', Items.COPPER_INGOT)
+                .define('X', Tags.Items.CHESTS)
+                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.ACACIA_IRON_CRATE.get())
+                .pattern("OOO")
+                .pattern("#X#")
+                .pattern("OOO")
+                .define('O', Items.ACACIA_PLANKS)
+                .define('#', Items.IRON_INGOT)
+                .define('X', QSRBlocks.OAK_COPPER_CRATE.get())
+                .unlockedBy("has_copper_crate", has(QSRBlocks.OAK_COPPER_CRATE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.ACACIA_GOLD_CRATE.get())
+                .pattern("OOO")
+                .pattern("#X#")
+                .pattern("OOO")
+                .define('O', Items.ACACIA_PLANKS)
+                .define('#', Items.GOLD_INGOT)
+                .define('X', QSRBlocks.OAK_IRON_CRATE.get())
+                .unlockedBy("has_iron_crate", has(QSRBlocks.OAK_IRON_CRATE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.ACACIA_DIAMOND_CRATE.get())
+                .pattern("OOO")
+                .pattern("#X#")
+                .pattern("OOO")
+                .define('O', Items.ACACIA_PLANKS)
+                .define('#', Items.DIAMOND)
+                .define('X', QSRBlocks.OAK_GOLD_CRATE.get())
+                .unlockedBy("has_gold_crate", has(QSRBlocks.OAK_GOLD_CRATE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.ACACIA_NETHERITE_CRATE.get())
+                .pattern("OOO")
+                .pattern("#X#")
+                .pattern("OOO")
+                .define('O', Items.ACACIA_PLANKS)
+                .define('#', Items.NETHERITE_INGOT)
+                .define('X', QSRBlocks.OAK_DIAMOND_CRATE.get())
+                .unlockedBy("has_diamond_crate", has(QSRBlocks.OAK_DIAMOND_CRATE.get()))
+                .save(recipeOutput);
+
         //Oak Crates
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.OAK_COPPER_CRATE.get())
                 .pattern("OOO")

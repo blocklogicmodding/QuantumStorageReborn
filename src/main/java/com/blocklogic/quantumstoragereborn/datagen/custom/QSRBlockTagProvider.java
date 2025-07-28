@@ -25,6 +25,12 @@ public class QSRBlockTagProvider extends BlockTagsProvider {
                 .add(QSRBlocks.TRASHCAN.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(QSRBlocks.ACACIA_COPPER_CRATE.get())
+                .add(QSRBlocks.ACACIA_IRON_CRATE.get())
+                .add(QSRBlocks.ACACIA_GOLD_CRATE.get())
+                .add(QSRBlocks.ACACIA_DIAMOND_CRATE.get())
+                .add(QSRBlocks.ACACIA_NETHERITE_CRATE.get())
+
                 .add(QSRBlocks.OAK_COPPER_CRATE.get())
                 .add(QSRBlocks.OAK_IRON_CRATE.get())
                 .add(QSRBlocks.OAK_GOLD_CRATE.get())
