@@ -32,7 +32,7 @@ public class DiamondCrateMenu extends AbstractContainerMenu {
 
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 15; col++) {
-                this.addSlot(new SlotItemHandler(this.blockEntity.inventory, col + row * 9,
+                this.addSlot(new SlotItemHandler(this.blockEntity.inventory, col + row * 15,
                         8 + col * 18, 8 + row * 18));
             }
         }

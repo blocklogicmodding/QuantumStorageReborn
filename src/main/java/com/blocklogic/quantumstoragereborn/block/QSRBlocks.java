@@ -1,10 +1,7 @@
 package com.blocklogic.quantumstoragereborn.block;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
-import com.blocklogic.quantumstoragereborn.block.custom.CopperCrateBlock;
-import com.blocklogic.quantumstoragereborn.block.custom.DiamondCrateBlock;
-import com.blocklogic.quantumstoragereborn.block.custom.GoldCrateBlock;
-import com.blocklogic.quantumstoragereborn.block.custom.IronCrateBlock;
+import com.blocklogic.quantumstoragereborn.block.custom.*;
 import com.blocklogic.quantumstoragereborn.item.QSRItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -53,7 +50,7 @@ public class QSRBlocks {
             ));
 
     public static final DeferredBlock<Block> NETHERITE_CRATE = registerBlock("netherite_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new NetheriteCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WOOD)

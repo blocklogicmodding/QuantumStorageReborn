@@ -2,10 +2,7 @@ package com.blocklogic.quantumstoragereborn;
 
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
-import com.blocklogic.quantumstoragereborn.container.screen.CopperCrateScreen;
-import com.blocklogic.quantumstoragereborn.container.screen.DiamondCrateScreen;
-import com.blocklogic.quantumstoragereborn.container.screen.GoldCrateScreen;
-import com.blocklogic.quantumstoragereborn.container.screen.IronCrateScreen;
+import com.blocklogic.quantumstoragereborn.container.screen.*;
 import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
 import com.blocklogic.quantumstoragereborn.item.QSRCreativeTab;
 import com.blocklogic.quantumstoragereborn.item.QSRItems;
@@ -79,6 +76,7 @@ public class QuantumStorageReborn {
             event.register(QSRMenuTypes.IRON_CRATE_MENU.get(), IronCrateScreen::new);
             event.register(QSRMenuTypes.GOLD_CRATE_MENU.get(), GoldCrateScreen::new);
             event.register(QSRMenuTypes.DIAMOND_CRATE_MENU.get(), DiamondCrateScreen::new);
+            event.register(QSRMenuTypes.NETHERITE_CRATE_MENU.get(), NetheriteCrateScreen::new);
         }
     }
 }
