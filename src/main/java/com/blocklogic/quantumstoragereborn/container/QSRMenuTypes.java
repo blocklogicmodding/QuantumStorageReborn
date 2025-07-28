@@ -2,6 +2,7 @@ package com.blocklogic.quantumstoragereborn.container;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
 import com.blocklogic.quantumstoragereborn.container.menu.CopperCrateMenu;
+import com.blocklogic.quantumstoragereborn.container.menu.DiamondCrateMenu;
 import com.blocklogic.quantumstoragereborn.container.menu.GoldCrateMenu;
 import com.blocklogic.quantumstoragereborn.container.menu.IronCrateMenu;
 import net.minecraft.core.registries.Registries;
@@ -22,6 +23,8 @@ public class QSRMenuTypes {
     public static final DeferredHolder<MenuType<?>, MenuType<IronCrateMenu>> IRON_CRATE_MENU = registerMenuType("iron_crate_menu", IronCrateMenu::new);
 
     public static final DeferredHolder<MenuType<?>, MenuType<GoldCrateMenu>> GOLD_CRATE_MENU = registerMenuType("gold_crate_menu", GoldCrateMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<DiamondCrateMenu>> DIAMOND_CRATE_MENU = registerMenuType("diamond_crate_menu", DiamondCrateMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));

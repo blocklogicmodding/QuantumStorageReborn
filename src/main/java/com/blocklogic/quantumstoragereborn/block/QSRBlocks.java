@@ -2,6 +2,7 @@ package com.blocklogic.quantumstoragereborn.block;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
 import com.blocklogic.quantumstoragereborn.block.custom.CopperCrateBlock;
+import com.blocklogic.quantumstoragereborn.block.custom.DiamondCrateBlock;
 import com.blocklogic.quantumstoragereborn.block.custom.GoldCrateBlock;
 import com.blocklogic.quantumstoragereborn.block.custom.IronCrateBlock;
 import com.blocklogic.quantumstoragereborn.item.QSRItems;
@@ -44,7 +45,7 @@ public class QSRBlocks {
             ));
 
     public static final DeferredBlock<Block> DIAMOND_CRATE = registerBlock("diamond_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new DiamondCrateBlock(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WOOD)
