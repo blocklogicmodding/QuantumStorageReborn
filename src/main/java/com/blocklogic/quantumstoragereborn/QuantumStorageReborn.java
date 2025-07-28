@@ -1,6 +1,7 @@
 package com.blocklogic.quantumstoragereborn;
 
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
+import com.blocklogic.quantumstoragereborn.entity.QSRBlockEntities;
 import com.blocklogic.quantumstoragereborn.item.QSRCreativeTab;
 import com.blocklogic.quantumstoragereborn.item.QSRItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -37,6 +38,7 @@ public class QuantumStorageReborn {
         QSRItems.register(modEventBus);
         QSRBlocks.register(modEventBus);
         QSRCreativeTab.register(modEventBus);
+        QSRBlockEntities.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
