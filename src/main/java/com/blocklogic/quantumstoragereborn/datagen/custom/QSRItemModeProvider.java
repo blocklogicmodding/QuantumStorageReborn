@@ -1,0 +1,21 @@
+package com.blocklogic.quantumstoragereborn.datagen.custom;
+
+import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
+import com.blocklogic.quantumstoragereborn.item.QSRItems;
+import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+public class QSRItemModeProvider extends ItemModelProvider {
+    public QSRItemModeProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, QuantumStorageReborn.MODID, existingFileHelper);
+    }
+
+    @Override
+    protected void registerModels() {
+        basicItem(QSRItems.QUANTUM_WRENCH.get());
+        basicItem(QSRItems.GOLD_RANGE_EXTENDER.get());
+        basicItem(QSRItems.DIAMOND_RANGE_EXTENDER.get());
+        basicItem(QSRItems.NETHERITE_RANGE_EXTENDER.get());
+    }
+}

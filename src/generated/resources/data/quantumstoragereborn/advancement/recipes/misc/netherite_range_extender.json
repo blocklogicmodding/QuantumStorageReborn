@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_diamond_range_extender": {
+      "conditions": {
+        "items": [
+          {
+            "items": "quantumstoragereborn:gold_range_extender"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "quantumstoragereborn:netherite_range_extender"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_diamond_range_extender"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "quantumstoragereborn:netherite_range_extender"
+    ]
+  }
+}

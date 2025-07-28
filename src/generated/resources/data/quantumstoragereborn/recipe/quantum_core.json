@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "E": {
+      "item": "minecraft:emerald_block"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    },
+    "Q": {
+      "item": "quantumstoragereborn:quantum_item_cell"
+    }
+  },
+  "pattern": [
+    "DPE",
+    "PQP",
+    "EPD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "quantumstoragereborn:quantum_core"
+  }
+}

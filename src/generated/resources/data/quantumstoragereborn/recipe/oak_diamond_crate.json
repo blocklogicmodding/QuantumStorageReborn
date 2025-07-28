@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "O": {
+      "item": "minecraft:oak_planks"
+    },
+    "X": {
+      "item": "quantumstoragereborn:oak_gold_crate"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "#X#",
+    "OOO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "quantumstoragereborn:oak_diamond_crate"
+  }
+}

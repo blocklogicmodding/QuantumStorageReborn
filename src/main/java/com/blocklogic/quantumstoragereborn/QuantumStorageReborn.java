@@ -1,5 +1,8 @@
 package com.blocklogic.quantumstoragereborn;
 
+import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
+import com.blocklogic.quantumstoragereborn.item.QSRCreativeTab;
+import com.blocklogic.quantumstoragereborn.item.QSRItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
@@ -11,31 +14,14 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
+
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 @Mod(QuantumStorageReborn.MODID)
 public class QuantumStorageReborn {
@@ -47,6 +33,10 @@ public class QuantumStorageReborn {
     public QuantumStorageReborn(IEventBus modEventBus, ModContainer modContainer) {
 
         modEventBus.addListener(this::commonSetup);
+
+        QSRItems.register(modEventBus);
+        QSRBlocks.register(modEventBus);
+        QSRCreativeTab.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -65,7 +55,8 @@ public class QuantumStorageReborn {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
-
+                ItemBlockRenderTypes.setRenderLayer(QSRBlocks.QUANTUM_ITEM_CELL.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(QSRBlocks.QUANTUM_FLUID_CELL.get(), RenderType.translucent());
             });
         }
 

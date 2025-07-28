@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "quantumstoragereborn:gold_range_extender"
+    },
+    "G": {
+      "item": "minecraft:diamond_block"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "GPG",
+    "P#P",
+    "GPG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "quantumstoragereborn:diamond_range_extender"
+  }
+}

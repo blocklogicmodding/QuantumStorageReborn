@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:chests"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "G": {
+      "tag": "c:glass_blocks"
+    }
+  },
+  "pattern": [
+    "DCD",
+    "CGC",
+    "DCD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "quantumstoragereborn:quantum_item_cell"
+  }
+}

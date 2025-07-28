@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"": {
+			"model": "quantumstoragereborn:block/quantum_fluid_cell"
+		}
+	}
+}
