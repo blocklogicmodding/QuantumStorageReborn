@@ -22,17 +22,11 @@ public class QSRCreativeTab {
                         output.accept(QSRBlocks.QUANTUM_ITEM_CELL);
                         output.accept(QSRBlocks.QUANTUM_FLUID_CELL);
 
-                        output.accept(QSRBlocks.ACACIA_COPPER_CRATE);
-                        output.accept(QSRBlocks.ACACIA_IRON_CRATE);
-                        output.accept(QSRBlocks.ACACIA_GOLD_CRATE);
-                        output.accept(QSRBlocks.ACACIA_DIAMOND_CRATE);
-                        output.accept(QSRBlocks.ACACIA_NETHERITE_CRATE);
-
-                        output.accept(QSRBlocks.OAK_COPPER_CRATE);
-                        output.accept(QSRBlocks.OAK_IRON_CRATE);
-                        output.accept(QSRBlocks.OAK_GOLD_CRATE);
-                        output.accept(QSRBlocks.OAK_DIAMOND_CRATE);
-                        output.accept(QSRBlocks.OAK_NETHERITE_CRATE);
+                        output.accept(QSRBlocks.COPPER_CRATE);
+                        output.accept(QSRBlocks.IRON_CRATE);
+                        output.accept(QSRBlocks.GOLD_CRATE);
+                        output.accept(QSRBlocks.DIAMOND_CRATE);
+                        output.accept(QSRBlocks.NETHERITE_CRATE);
 
                         output.accept(QSRBlocks.TRASHCAN);
 

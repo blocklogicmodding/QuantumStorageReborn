@@ -6,17 +6,11 @@
   "item.quantumstoragereborn.diamond_range_extender": "Diamond Range Extender",
   "item.quantumstoragereborn.netherite_range_extender": "Netherite Range Extender",
 
-  "block.quantumstoragereborn.acacia_copper_crate": "Acacia Copper Crate",
-  "block.quantumstoragereborn.acacia_iron_crate": "Acacia Iron Crate",
-  "block.quantumstoragereborn.acacia_gold_crate": "Acacia Gold Crate",
-  "block.quantumstoragereborn.acacia_diamond_crate": "Acacia Diamond Crate",
-  "block.quantumstoragereborn.acacia_netherite_crate": "Acacia Netherite Crate",
-
-  "block.quantumstoragereborn.oak_copper_crate": "Oak Copper Crate",
-  "block.quantumstoragereborn.oak_iron_crate": "Oak Iron Crate",
-  "block.quantumstoragereborn.oak_gold_crate": "Oak Gold Crate",
-  "block.quantumstoragereborn.oak_diamond_crate": "Oak Diamond Crate",
-  "block.quantumstoragereborn.oak_netherite_crate": "Oak Netherite Crate",
+  "block.quantumstoragereborn.copper_crate": "Copper Crate",
+  "block.quantumstoragereborn.iron_crate": "Iron Crate",
+  "block.quantumstoragereborn.gold_crate": "Gold Crate",
+  "block.quantumstoragereborn.diamond_crate": "Diamond Crate",
+  "block.quantumstoragereborn.netherite_crate": "Netherite Crate",
 
   "block.quantumstoragereborn.quantum_item_cell": "Quantum Item Cell",
   "block.quantumstoragereborn.quantum_fluid_cell": "Quantum Fluid Cell",

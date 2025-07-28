@@ -16,8 +16,7 @@ import java.util.function.Supplier;
 public class QSRBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(QuantumStorageReborn.MODID);
 
-    //Acacia Crates
-    public static final DeferredBlock<Block> ACACIA_COPPER_CRATE = registerBlock("acacia_copper_crate",
+    public static final DeferredBlock<Block> COPPER_CRATE = registerBlock("copper_crate",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -25,7 +24,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> ACACIA_IRON_CRATE = registerBlock("acacia_iron_crate",
+    public static final DeferredBlock<Block> IRON_CRATE = registerBlock("iron_crate",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -33,7 +32,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> ACACIA_GOLD_CRATE = registerBlock("acacia_gold_crate",
+    public static final DeferredBlock<Block> GOLD_CRATE = registerBlock("gold_crate",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -41,7 +40,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> ACACIA_DIAMOND_CRATE = registerBlock("acacia_diamond_crate",
+    public static final DeferredBlock<Block> DIAMOND_CRATE = registerBlock("diamond_crate",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()
@@ -49,48 +48,7 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> ACACIA_NETHERITE_CRATE = registerBlock("acacia_netherite_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()
-            ));
-
-    //Oak Crates
-    public static final DeferredBlock<Block> OAK_COPPER_CRATE = registerBlock("oak_copper_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()
-            ));
-
-    public static final DeferredBlock<Block> OAK_IRON_CRATE = registerBlock("oak_iron_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()
-            ));
-
-    public static final DeferredBlock<Block> OAK_GOLD_CRATE = registerBlock("oak_gold_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()
-            ));
-
-    public static final DeferredBlock<Block> OAK_DIAMOND_CRATE = registerBlock("oak_diamond_crate",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()
-            ));
-
-    public static final DeferredBlock<Block> OAK_NETHERITE_CRATE = registerBlock("oak_netherite_crate",
+    public static final DeferredBlock<Block> NETHERITE_CRATE = registerBlock("netherite_crate",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3.0F)
                     .requiresCorrectToolForDrops()

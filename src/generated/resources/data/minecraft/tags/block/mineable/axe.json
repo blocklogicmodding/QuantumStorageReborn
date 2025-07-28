@@ -1,14 +1,9 @@
 {
   "values": [
-    "quantumstoragereborn:acacia_copper_crate",
-    "quantumstoragereborn:acacia_iron_crate",
-    "quantumstoragereborn:acacia_gold_crate",
-    "quantumstoragereborn:acacia_diamond_crate",
-    "quantumstoragereborn:acacia_netherite_crate",
-    "quantumstoragereborn:oak_copper_crate",
-    "quantumstoragereborn:oak_iron_crate",
-    "quantumstoragereborn:oak_gold_crate",
-    "quantumstoragereborn:oak_diamond_crate",
-    "quantumstoragereborn:oak_netherite_crate"
+    "quantumstoragereborn:copper_crate",
+    "quantumstoragereborn:iron_crate",
+    "quantumstoragereborn:gold_crate",
+    "quantumstoragereborn:diamond_crate",
+    "quantumstoragereborn:netherite_crate"
   ]
 }
