@@ -1,6 +1,7 @@
 package com.blocklogic.quantumstoragereborn;
 
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
+import com.blocklogic.quantumstoragereborn.client.ber.QuantumFluidCellBlockEntityRenderer;
 import com.blocklogic.quantumstoragereborn.client.ber.QuantumItemCellBlockEntityRenderer;
 import com.blocklogic.quantumstoragereborn.component.QSRDataComponents;
 import com.blocklogic.quantumstoragereborn.config.Config;
@@ -88,6 +89,7 @@ public class QuantumStorageReborn {
         @SubscribeEvent
         public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(QSRBlockEntities.QUANTUM_ITEM_CELL_BE.get(), QuantumItemCellBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(QSRBlockEntities.QUANTUM_FLUID_CELL_BE.get(), QuantumFluidCellBlockEntityRenderer::new);
         }
 
         @SubscribeEvent
