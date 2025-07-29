@@ -46,9 +46,11 @@ public class QuantumItemCellBlockEntity extends BlockEntity implements MenuProvi
     );
 
     private CellContents contents = new CellContents(Optional.empty(), 0, false);
+    private ItemStackHandler itemHandler;
 
     public QuantumItemCellBlockEntity(BlockPos pos, BlockState blockState) {
         super(QSRBlockEntities.QUANTUM_ITEM_CELL_BE.get(), pos, blockState);
+        this.itemHandler = createItemHandler();
     }
 
     public static boolean hasSignificantNBT(ItemStack stack) {
@@ -194,6 +196,97 @@ public class QuantumItemCellBlockEntity extends BlockEntity implements MenuProvi
         return rotation;
     }
 
+    private ItemStackHandler createItemHandler() {
+        return new ItemStackHandler(1) {
+            @Override
+            public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+                if (!canStoreItem(stack)) return stack;
+
+                int maxCapacity = Config.getMaxQuantumItemCellStorage();
+                int spaceAvailable = maxCapacity - contents.count();
+                int toStore = Math.min(stack.getCount(), spaceAvailable);
+
+                if (toStore <= 0) return stack;
+
+                if (!simulate) {
+                    ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
+                    contents = new CellContents(Optional.of(itemId), contents.count() + toStore, contents.locked());
+                    setChanged();
+                    if (level != null && !level.isClientSide()) {
+                        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+                    }
+                }
+
+                ItemStack remainder = stack.copy();
+                remainder.shrink(toStore);
+                return remainder;
+            }
+
+            @Override
+            public ItemStack extractItem(int slot, int amount, boolean simulate) {
+                if (contents.storedItemId().isEmpty() || contents.count() <= 0) return ItemStack.EMPTY;
+
+                Item item = BuiltInRegistries.ITEM.get(contents.storedItemId().get());
+                int toExtract = Math.min(Math.min(amount, contents.count()), item.getDefaultMaxStackSize());
+
+                if (toExtract <= 0) return ItemStack.EMPTY;
+
+                if (!simulate) {
+                    contents = new CellContents(contents.storedItemId(), contents.count() - toExtract, contents.locked());
+                    setChanged();
+                    if (level != null && !level.isClientSide()) {
+                        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+                    }
+                }
+
+                return new ItemStack(item, toExtract);
+            }
+
+            @Override
+            public ItemStack getStackInSlot(int slot) {
+                if (contents.storedItemId().isEmpty() || contents.count() <= 0) {
+                    return ItemStack.EMPTY;
+                }
+
+                Item item = BuiltInRegistries.ITEM.get(contents.storedItemId().get());
+                return new ItemStack(item, contents.count());
+            }
+
+            @Override
+            public void setStackInSlot(int slot, ItemStack stack) {
+                if (stack.isEmpty()) {
+                    if (!contents.locked()) {
+                        contents = new CellContents(Optional.empty(), 0, false);
+                        setChanged();
+                        if (level != null && !level.isClientSide()) {
+                            level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+                        }
+                    }
+                    return;
+                }
+
+                if (canStoreItem(stack)) {
+                    ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
+                    contents = new CellContents(Optional.of(itemId), stack.getCount(), contents.locked());
+                    setChanged();
+                    if (level != null && !level.isClientSide()) {
+                        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+                    }
+                }
+            }
+
+            @Override
+            public int getSlotLimit(int slot) {
+                return Integer.MAX_VALUE;
+            }
+
+            @Override
+            public boolean isItemValid(int slot, ItemStack stack) {
+                return canStoreItem(stack);
+            }
+        };
+    }
+
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
@@ -241,57 +334,9 @@ public class QuantumItemCellBlockEntity extends BlockEntity implements MenuProvi
         event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, QSRBlockEntities.QUANTUM_ITEM_CELL_BE.get(),
                 (blockEntity, direction) -> {
                     if (blockEntity instanceof QuantumItemCellBlockEntity cellEntity) {
-                        return cellEntity.getItemHandler();
+                        return cellEntity.itemHandler;
                     }
                     return null;
                 });
-    }
-
-    private ItemStackHandler getItemHandler() {
-        return new ItemStackHandler(1) {
-            @Override
-            public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
-                if (!canStoreItem(stack)) return stack;
-
-                int maxCapacity = Config.getMaxQuantumItemCellStorage();
-                int spaceAvailable = maxCapacity - contents.count();
-                int toStore = Math.min(stack.getCount(), spaceAvailable);
-
-                if (toStore <= 0) return stack;
-
-                if (!simulate) {
-                    ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
-                    contents = new CellContents(Optional.of(itemId), contents.count() + toStore, contents.locked());
-                    setChanged();
-                    if (level != null && !level.isClientSide()) {
-                        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-                    }
-                }
-
-                ItemStack remainder = stack.copy();
-                remainder.shrink(toStore);
-                return remainder;
-            }
-
-            @Override
-            public ItemStack extractItem(int slot, int amount, boolean simulate) {
-                if (contents.storedItemId().isEmpty() || contents.count() <= 0) return ItemStack.EMPTY;
-
-                Item item = BuiltInRegistries.ITEM.get(contents.storedItemId().get());
-                int toExtract = Math.min(Math.min(amount, contents.count()), item.getDefaultMaxStackSize());
-
-                if (toExtract <= 0) return ItemStack.EMPTY;
-
-                if (!simulate) {
-                    contents = new CellContents(contents.storedItemId(), contents.count() - toExtract, contents.locked());
-                    setChanged();
-                    if (level != null && !level.isClientSide()) {
-                        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-                    }
-                }
-
-                return new ItemStack(item, toExtract);
-            }
-        };
     }
 }

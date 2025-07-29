@@ -45,6 +45,7 @@ public class QuantumFluidCellBlockEntity extends BlockEntity implements MenuProv
     );
 
     private CellContents contents = new CellContents(Optional.empty(), 0, false);
+    private IFluidHandler fluidHandler;
 
     public final ItemStackHandler inventory = new ItemStackHandler(2) {
         @Override
@@ -66,6 +67,7 @@ public class QuantumFluidCellBlockEntity extends BlockEntity implements MenuProv
 
     public QuantumFluidCellBlockEntity(BlockPos pos, BlockState blockState) {
         super(QSRBlockEntities.QUANTUM_FLUID_CELL_BE.get(), pos, blockState);
+        this.fluidHandler = createFluidHandler();
     }
 
     private boolean hasFluidCapability(ItemStack stack) {
@@ -236,62 +238,7 @@ public class QuantumFluidCellBlockEntity extends BlockEntity implements MenuProv
         }
     }
 
-    @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
-        tag.put("inventory", inventory.serializeNBT(registries));
-        if (contents.storedFluidId().isPresent()) {
-            tag.putString("StoredFluidId", contents.storedFluidId().get().toString());
-        }
-        tag.putInt("Amount", contents.amount());
-        tag.putBoolean("Locked", contents.locked());
-    }
-
-    @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-        inventory.deserializeNBT(registries, tag.getCompound("inventory"));
-        Optional<ResourceLocation> fluidId = tag.contains("StoredFluidId") ?
-                Optional.of(ResourceLocation.parse(tag.getString("StoredFluidId"))) :
-                Optional.empty();
-        int amount = tag.getInt("Amount");
-        boolean locked = tag.getBoolean("Locked");
-        contents = new CellContents(fluidId, amount, locked);
-    }
-
-    @Override
-    public Component getDisplayName() {
-        return Component.translatable("gui.quantumstoragereborn.quantum_fluid_cell");
-    }
-
-    @Nullable
-    @Override
-    public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
-        return new QuantumFluidCellMenu(containerId, playerInventory, this);
-    }
-
-    @Nullable
-    @Override
-    public Packet<ClientGamePacketListener> getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this);
-    }
-
-    @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        return saveWithoutMetadata(registries);
-    }
-
-    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, QSRBlockEntities.QUANTUM_FLUID_CELL_BE.get(),
-                (blockEntity, direction) -> {
-                    if (blockEntity instanceof QuantumFluidCellBlockEntity cellEntity) {
-                        return cellEntity.getFluidHandler();
-                    }
-                    return null;
-                });
-    }
-
-    private IFluidHandler getFluidHandler() {
+    private IFluidHandler createFluidHandler() {
         return new IFluidHandler() {
             @Override
             public int getTanks() {
@@ -369,5 +316,60 @@ public class QuantumFluidCellBlockEntity extends BlockEntity implements MenuProv
                 return new FluidStack(fluid, toDrain);
             }
         };
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
+        tag.put("inventory", inventory.serializeNBT(registries));
+        if (contents.storedFluidId().isPresent()) {
+            tag.putString("StoredFluidId", contents.storedFluidId().get().toString());
+        }
+        tag.putInt("Amount", contents.amount());
+        tag.putBoolean("Locked", contents.locked());
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
+        inventory.deserializeNBT(registries, tag.getCompound("inventory"));
+        Optional<ResourceLocation> fluidId = tag.contains("StoredFluidId") ?
+                Optional.of(ResourceLocation.parse(tag.getString("StoredFluidId"))) :
+                Optional.empty();
+        int amount = tag.getInt("Amount");
+        boolean locked = tag.getBoolean("Locked");
+        contents = new CellContents(fluidId, amount, locked);
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable("gui.quantumstoragereborn.quantum_fluid_cell");
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        return new QuantumFluidCellMenu(containerId, playerInventory, this);
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        return saveWithoutMetadata(registries);
+    }
+
+    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, QSRBlockEntities.QUANTUM_FLUID_CELL_BE.get(),
+                (blockEntity, direction) -> {
+                    if (blockEntity instanceof QuantumFluidCellBlockEntity cellEntity) {
+                        return cellEntity.fluidHandler;
+                    }
+                    return null;
+                });
     }
 }
