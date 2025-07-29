@@ -74,22 +74,6 @@ public class QSRBlocks {
                     .noOcclusion()
             ));
 
-    public static final DeferredBlock<Block> QUANTUM_CORE = registerBlock("quantum_core",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE)
-                    .noOcclusion()
-            ));
-
-    public static final DeferredBlock<Block> TRASHCAN = registerBlock("trashcan",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE)
-                    .noOcclusion()
-            ));
-
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

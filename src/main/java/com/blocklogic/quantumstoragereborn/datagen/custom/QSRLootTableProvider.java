@@ -18,8 +18,6 @@ public class QSRLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(QSRBlocks.QUANTUM_ITEM_CELL.get());
         dropSelf(QSRBlocks.QUANTUM_FLUID_CELL.get());
-        dropSelf(QSRBlocks.QUANTUM_CORE.get());
-        dropSelf(QSRBlocks.TRASHCAN.get());
 
         dropSelf(QSRBlocks.COPPER_CRATE.get());
         dropSelf(QSRBlocks.IRON_CRATE.get());

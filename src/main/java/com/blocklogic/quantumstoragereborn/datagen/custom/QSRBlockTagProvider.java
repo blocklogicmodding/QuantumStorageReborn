@@ -20,9 +20,7 @@ public class QSRBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(QSRBlocks.QUANTUM_ITEM_CELL.get())
-                .add(QSRBlocks.QUANTUM_FLUID_CELL.get())
-                .add(QSRBlocks.QUANTUM_CORE.get())
-                .add(QSRBlocks.TRASHCAN.get());
+                .add(QSRBlocks.QUANTUM_FLUID_CELL.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(QSRBlocks.COPPER_CRATE.get())

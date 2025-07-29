@@ -13,11 +13,6 @@ public class QSRItemModeProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(QSRItems.QUANTUM_WRENCH.get());
-        basicItem(QSRItems.GOLD_RANGE_EXTENDER.get());
-        basicItem(QSRItems.DIAMOND_RANGE_EXTENDER.get());
-        basicItem(QSRItems.NETHERITE_RANGE_EXTENDER.get());
-
         basicItem(QSRItems.IRON_CRATE_UPGRADE.get());
         basicItem(QSRItems.GOLD_CRATE_UPGRADE.get());
         basicItem(QSRItems.DIAMOND_CRATE_UPGRADE.get());

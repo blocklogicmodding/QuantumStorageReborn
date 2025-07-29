@@ -23,18 +23,6 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
-        // Quantum Blocks
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.QUANTUM_CORE.get())
-                .pattern("DPE")
-                .pattern("PQP")
-                .pattern("EPD")
-                .define('D', Items.DIAMOND_BLOCK)
-                .define('E', Items.EMERALD_BLOCK)
-                .define('P', Items.ENDER_PEARL)
-                .define('Q', QSRBlocks.QUANTUM_ITEM_CELL)
-                .unlockedBy("has_quantum_item_cell", has(QSRBlocks.QUANTUM_ITEM_CELL))
-                .save(recipeOutput);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.QUANTUM_ITEM_CELL.get())
                 .pattern("DCD")
                 .pattern("CGC")
@@ -53,16 +41,6 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', Items.DIAMOND_BLOCK)
                 .define('G', Tags.Items.GLASS_BLOCKS)
                 .unlockedBy("has_diamond", has(Items.DIAMOND))
-                .save(recipeOutput);
-
-        //Trashcan
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRBlocks.TRASHCAN.get())
-                .pattern("SSS")
-                .pattern("SES")
-                .pattern("SSS")
-                .define('E', Items.ENDER_PEARL)
-                .define('S', Tags.Items.STONES)
-                .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
                 .save(recipeOutput);
 
         // Crates
@@ -114,47 +92,6 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', Items.NETHERITE_INGOT)
                 .define('X', Tags.Items.CHESTS)
                 .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
-                .save(recipeOutput);
-
-        //Items
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.QUANTUM_WRENCH.get())
-                .pattern(" PD")
-                .pattern(" SP")
-                .pattern("S  ")
-                .define('D', Items.DIAMOND)
-                .define('P', Items.ENDER_PEARL)
-                .define('S', Items.STICK)
-                .unlockedBy("has_diamond", has(Items.DIAMOND))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.GOLD_RANGE_EXTENDER.get())
-                .pattern("GPG")
-                .pattern("P#P")
-                .pattern("GPG")
-                .define('G', Items.GOLD_BLOCK)
-                .define('P', Items.ENDER_PEARL)
-                .define('#', Items.REDSTONE_BLOCK)
-                .unlockedBy("has_redstone", has(Items.REDSTONE))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.DIAMOND_RANGE_EXTENDER.get())
-                .pattern("GPG")
-                .pattern("P#P")
-                .pattern("GPG")
-                .define('G', Items.DIAMOND_BLOCK)
-                .define('P', Items.ENDER_PEARL)
-                .define('#', QSRItems.GOLD_RANGE_EXTENDER.get())
-                .unlockedBy("has_gold_range_extender", has(QSRItems.GOLD_RANGE_EXTENDER.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.NETHERITE_RANGE_EXTENDER.get())
-                .pattern("GPG")
-                .pattern("P#P")
-                .pattern("GPG")
-                .define('G', Items.NETHERITE_INGOT)
-                .define('P', Items.ENDER_PEARL)
-                .define('#', QSRItems.GOLD_RANGE_EXTENDER.get())
-                .unlockedBy("has_diamond_range_extender", has(QSRItems.GOLD_RANGE_EXTENDER.get()))
                 .save(recipeOutput);
 
         // Upgrade Bases - Used for upgrading crates in-place

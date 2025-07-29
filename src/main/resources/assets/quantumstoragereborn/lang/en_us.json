@@ -19,8 +19,6 @@
 
   "block.quantumstoragereborn.quantum_item_cell": "Quantum Item Cell",
   "block.quantumstoragereborn.quantum_fluid_cell": "Quantum Fluid Cell",
-  "block.quantumstoragereborn.quantum_core": "Quantum Core",
-  "block.quantumstoragereborn.trashcan": "Trashcan",
 
   "gui.quantumstoragereborn.copper_crate": "Copper Crate",
   "gui.quantumstoragereborn.iron_crate": "Iron Crate",

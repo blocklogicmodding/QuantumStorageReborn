@@ -18,7 +18,6 @@ public class QSRCreativeTab {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(QSRBlocks.QUANTUM_ITEM_CELL.get()))
                     .title(Component.translatable("creativetab.quantumstoragereborn"))
                     .displayItems((ItemDisplayParameters, output) -> {
-                        output.accept(QSRBlocks.QUANTUM_CORE);
                         output.accept(QSRBlocks.QUANTUM_ITEM_CELL);
                         output.accept(QSRBlocks.QUANTUM_FLUID_CELL);
 
@@ -27,13 +26,6 @@ public class QSRCreativeTab {
                         output.accept(QSRBlocks.GOLD_CRATE);
                         output.accept(QSRBlocks.DIAMOND_CRATE);
                         output.accept(QSRBlocks.NETHERITE_CRATE);
-
-                        output.accept(QSRBlocks.TRASHCAN);
-
-                        output.accept(QSRItems.QUANTUM_WRENCH);
-                        output.accept(QSRItems.GOLD_RANGE_EXTENDER);
-                        output.accept(QSRItems.DIAMOND_RANGE_EXTENDER);
-                        output.accept(QSRItems.NETHERITE_RANGE_EXTENDER);
 
                         output.accept(QSRItems.IRON_CRATE_UPGRADE);
                         output.accept(QSRItems.GOLD_CRATE_UPGRADE);
