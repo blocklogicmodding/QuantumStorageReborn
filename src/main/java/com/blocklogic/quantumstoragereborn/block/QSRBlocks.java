@@ -59,8 +59,8 @@ public class QSRBlocks {
             ));
 
     public static final DeferredBlock<Block> QUANTUM_ITEM_CELL = registerBlock("quantum_item_cell",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
+            () -> new QuantumItemCellBlock(BlockBehaviour.Properties.of()
+                    .strength(4.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
                     .noOcclusion()
@@ -68,7 +68,7 @@ public class QSRBlocks {
 
     public static final DeferredBlock<Block> QUANTUM_FLUID_CELL = registerBlock("quantum_fluid_cell",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
+                    .strength(4.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
                     .noOcclusion()
@@ -76,7 +76,7 @@ public class QSRBlocks {
 
     public static final DeferredBlock<Block> QUANTUM_CORE = registerBlock("quantum_core",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0F)
+                    .strength(4.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
                     .noOcclusion()

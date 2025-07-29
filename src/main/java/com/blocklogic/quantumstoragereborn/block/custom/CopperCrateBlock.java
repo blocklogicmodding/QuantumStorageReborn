@@ -33,16 +33,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CopperCrateBlock extends BaseEntityBlock {
-    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 14, 15);
     public static final MapCodec<CopperCrateBlock> CODEC = simpleCodec(CopperCrateBlock::new);
 
     public CopperCrateBlock(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
     }
 
     @Override

@@ -34,6 +34,10 @@ public class QSRBlockEntities {
             BLOCK_ENTITIES.register("netherite_crate_be", () -> BlockEntityType.Builder.of(
                     NetheriteCrateBlockEntity::new, QSRBlocks.NETHERITE_CRATE.get()).build(null));
 
+    public static final Supplier<BlockEntityType<QuantumItemCellBlockEntity>> QUANTUM_ITEM_CELL_BE =
+            BLOCK_ENTITIES.register("quantum_item_cell_be", () -> BlockEntityType.Builder.of(
+                    QuantumItemCellBlockEntity::new, QSRBlocks.QUANTUM_ITEM_CELL.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

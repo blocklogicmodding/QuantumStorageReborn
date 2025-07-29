@@ -1,6 +1,7 @@
 package com.blocklogic.quantumstoragereborn.component;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
+import com.blocklogic.quantumstoragereborn.entity.custom.QuantumItemCellBlockEntity;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.component.DataComponentType;
@@ -20,6 +21,12 @@ public class QSRDataComponents {
             DATA_COMPONENTS.register("inventory_data", () -> DataComponentType.<InventoryData>builder()
                     .persistent(InventoryData.CODEC)
                     .build());
+
+    public static final Supplier<DataComponentType<QuantumItemCellBlockEntity.CellContents>> CELL_CONTENTS =
+            DATA_COMPONENTS.register("cell_contents",
+                    () -> DataComponentType.<QuantumItemCellBlockEntity.CellContents>builder()
+                            .persistent(QuantumItemCellBlockEntity.CELL_CONTENTS_CODEC)
+                            .build());
 
     public static void register(IEventBus eventBus) {
         DATA_COMPONENTS.register(eventBus);

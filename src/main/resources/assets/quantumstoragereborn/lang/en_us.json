@@ -28,5 +28,27 @@
   "gui.quantumstoragereborn.diamond_crate": "Diamond Crate",
   "gui.quantumstoragereborn.netherite_crate": "Netherite Crate",
 
-  "tooltip.quantumstoragereborn.crate.contains_items": "Not empty! Something's stashed in here."
+  "tooltip.quantumstoragereborn.crate.contains_items": "Not empty! Something's stashed in here.",
+
+  "gui.quantumstoragereborn.quantum_item_cell": "Quantum Item Cell",
+
+  "gui.quantumstoragereborn.cell.no_item": "No Item Stored",
+  "gui.quantumstoragereborn.cell.stored_item": "%s",
+  "gui.quantumstoragereborn.cell.empty": "Empty",
+  "gui.quantumstoragereborn.cell.count": "Amount: %s",
+  "gui.quantumstoragereborn.cell.capacity_unlimited": "Capacity: Unlimited",
+  "gui.quantumstoragereborn.cell.capacity_percent": "Capacity Used: %s%%",
+
+  "gui.quantumstoragereborn.cell.extract_tooltip": "Extract Items",
+  "gui.quantumstoragereborn.cell.lock_tooltip": "Lock Cell",
+  "gui.quantumstoragereborn.cell.unlock_tooltip": "Unlock Cell",
+  "gui.quantumstoragereborn.cell.lock_disabled_tooltip": "Cannot lock empty cell",
+
+  "message.quantumstoragereborn.cell_no_nbt": "This cell cannot store items with NBT data",
+  "message.quantumstoragereborn.cell_wrong_item": "This cell only accepts %s",
+  "message.quantumstoragereborn.cell_full": "Cell is full",
+  "message.quantumstoragereborn.cell_empty": "Cell is empty",
+  "message.quantumstoragereborn.cell_cannot_lock_empty": "Cannot lock an empty cell",
+  "message.quantumstoragereborn.cell_locked": "Cell locked",
+  "message.quantumstoragereborn.cell_unlocked": "Cell unlocked"
 }

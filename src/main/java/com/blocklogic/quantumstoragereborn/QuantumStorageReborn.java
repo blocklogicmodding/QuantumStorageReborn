@@ -1,6 +1,7 @@
 package com.blocklogic.quantumstoragereborn;
 
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
+import com.blocklogic.quantumstoragereborn.client.ber.QuantumItemCellBlockEntityRenderer;
 import com.blocklogic.quantumstoragereborn.component.QSRDataComponents;
 import com.blocklogic.quantumstoragereborn.config.Config;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
@@ -54,6 +55,7 @@ public class QuantumStorageReborn {
         modEventBus.addListener(GoldCrateBlockEntity::registerCapabilities);
         modEventBus.addListener(DiamondCrateBlockEntity::registerCapabilities);
         modEventBus.addListener(NetheriteCrateBlockEntity::registerCapabilities);
+        modEventBus.addListener(QuantumItemCellBlockEntity::registerCapabilities);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -79,7 +81,12 @@ public class QuantumStorageReborn {
 
         @SubscribeEvent
         public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            ;
+        }
 
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(QSRBlockEntities.QUANTUM_ITEM_CELL_BE.get(), QuantumItemCellBlockEntityRenderer::new);
         }
 
         @SubscribeEvent
@@ -89,6 +96,7 @@ public class QuantumStorageReborn {
             event.register(QSRMenuTypes.GOLD_CRATE_MENU.get(), GoldCrateScreen::new);
             event.register(QSRMenuTypes.DIAMOND_CRATE_MENU.get(), DiamondCrateScreen::new);
             event.register(QSRMenuTypes.NETHERITE_CRATE_MENU.get(), NetheriteCrateScreen::new);
+            event.register(QSRMenuTypes.QUANTUM_ITEM_CELL_MENU.get(), QuantumItemCellScreen::new);
         }
     }
 }
