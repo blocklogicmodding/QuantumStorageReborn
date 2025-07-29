@@ -50,5 +50,24 @@
   "message.quantumstoragereborn.cell_empty": "Cell is empty",
   "message.quantumstoragereborn.cell_cannot_lock_empty": "Cannot lock an empty cell",
   "message.quantumstoragereborn.cell_locked": "Cell locked",
-  "message.quantumstoragereborn.cell_unlocked": "Cell unlocked"
+  "message.quantumstoragereborn.cell_unlocked": "Cell unlocked",
+
+  "gui.quantumstoragereborn.quantum_fluid_cell": "Quantum Fluid Cell",
+
+  "gui.quantumstoragereborn.fluid_cell.no_fluid": "No Fluid Stored",
+  "gui.quantumstoragereborn.fluid_cell.stored_fluid": "%s",
+  "gui.quantumstoragereborn.fluid_cell.empty": "Empty",
+  "gui.quantumstoragereborn.fluid_cell.amount": "Amount: %s mB",
+  "gui.quantumstoragereborn.fluid_cell.capacity_percent": "Capacity Used: %s%%",
+
+  "gui.quantumstoragereborn.fluid_cell.lock_tooltip": "Lock Cell",
+  "gui.quantumstoragereborn.fluid_cell.unlock_tooltip": "Unlock Cell",
+  "gui.quantumstoragereborn.fluid_cell.lock_disabled_tooltip": "Cannot lock empty cell",
+
+  "message.quantumstoragereborn.fluid_cell_wrong_fluid": "This cell only accepts %s",
+  "message.quantumstoragereborn.fluid_cell_full": "Cell is full",
+  "message.quantumstoragereborn.fluid_cell_empty": "Cell is empty",
+  "message.quantumstoragereborn.fluid_cell_cannot_lock_empty": "Cannot lock an empty cell",
+  "message.quantumstoragereborn.fluid_cell_locked": "Cell locked",
+  "message.quantumstoragereborn.fluid_cell_unlocked": "Cell unlocked"
 }

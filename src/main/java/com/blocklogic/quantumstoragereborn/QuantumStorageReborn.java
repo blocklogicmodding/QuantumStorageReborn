@@ -56,6 +56,7 @@ public class QuantumStorageReborn {
         modEventBus.addListener(DiamondCrateBlockEntity::registerCapabilities);
         modEventBus.addListener(NetheriteCrateBlockEntity::registerCapabilities);
         modEventBus.addListener(QuantumItemCellBlockEntity::registerCapabilities);
+        modEventBus.addListener(QuantumFluidCellBlockEntity::registerCapabilities);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -97,6 +98,7 @@ public class QuantumStorageReborn {
             event.register(QSRMenuTypes.DIAMOND_CRATE_MENU.get(), DiamondCrateScreen::new);
             event.register(QSRMenuTypes.NETHERITE_CRATE_MENU.get(), NetheriteCrateScreen::new);
             event.register(QSRMenuTypes.QUANTUM_ITEM_CELL_MENU.get(), QuantumItemCellScreen::new);
+            event.register(QSRMenuTypes.QUANTUM_FLUID_CELL_MENU.get(), QuantumFluidCellScreen::new);
         }
     }
 }

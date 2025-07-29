@@ -38,6 +38,10 @@ public class QSRBlockEntities {
             BLOCK_ENTITIES.register("quantum_item_cell_be", () -> BlockEntityType.Builder.of(
                     QuantumItemCellBlockEntity::new, QSRBlocks.QUANTUM_ITEM_CELL.get()).build(null));
 
+    public static final Supplier<BlockEntityType<QuantumFluidCellBlockEntity>> QUANTUM_FLUID_CELL_BE =
+            BLOCK_ENTITIES.register("quantum_fluid_cell_be", () -> BlockEntityType.Builder.of(
+                    QuantumFluidCellBlockEntity::new, QSRBlocks.QUANTUM_FLUID_CELL.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

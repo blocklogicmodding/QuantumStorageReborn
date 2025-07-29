@@ -17,5 +17,11 @@ public class NetworkHandler {
                 CellActionPacket.STREAM_CODEC,
                 CellActionPacket::handle
         );
+
+        registrar.playToServer(
+                FluidCellActionPacket.TYPE,
+                FluidCellActionPacket.STREAM_CODEC,
+                FluidCellActionPacket::handle
+        );
     }
 }

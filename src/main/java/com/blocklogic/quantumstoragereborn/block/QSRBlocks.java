@@ -67,7 +67,7 @@ public class QSRBlocks {
             ));
 
     public static final DeferredBlock<Block> QUANTUM_FLUID_CELL = registerBlock("quantum_fluid_cell",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new QuantumFluidCellBlock(BlockBehaviour.Properties.of()
                     .strength(4.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)

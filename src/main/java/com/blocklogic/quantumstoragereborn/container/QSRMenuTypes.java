@@ -27,6 +27,8 @@ public class QSRMenuTypes {
 
     public static final DeferredHolder<MenuType<?>, MenuType<QuantumItemCellMenu>> QUANTUM_ITEM_CELL_MENU = registerMenuType("quantum_item_cell_menu", QuantumItemCellMenu::new);
 
+    public static final DeferredHolder<MenuType<?>, MenuType<QuantumFluidCellMenu>> QUANTUM_FLUID_CELL_MENU = registerMenuType("quantum_fluid_cell_menu", QuantumFluidCellMenu::new);
+
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));
     }
