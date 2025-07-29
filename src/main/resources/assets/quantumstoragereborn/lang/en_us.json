@@ -69,5 +69,7 @@
   "message.quantumstoragereborn.fluid_cell_empty": "Cell is empty",
   "message.quantumstoragereborn.fluid_cell_cannot_lock_empty": "Cannot lock an empty cell",
   "message.quantumstoragereborn.fluid_cell_locked": "Cell locked",
-  "message.quantumstoragereborn.fluid_cell_unlocked": "Cell unlocked"
+  "message.quantumstoragereborn.fluid_cell_unlocked": "Cell unlocked",
+  "message.quantumstoragereborn.no_bucket_for_fluid": "No bucket available for this fluid type",
+  "message.quantumstoragereborn.fluid_extracted": "Fluid extracted to bucket"
 }
