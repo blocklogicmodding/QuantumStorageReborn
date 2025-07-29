@@ -1,6 +1,5 @@
 package com.blocklogic.quantumstoragereborn.container.menu;
 
-import com.blocklogic.quantumstoragereborn.config.Config;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
 import com.blocklogic.quantumstoragereborn.entity.custom.QuantumFluidCellBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -33,14 +32,12 @@ public class QuantumFluidCellMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        // Input slot at x8, y8
         this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 8, 8));
 
-        // Output slot at x152, y8
         this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 1, 152, 8) {
             @Override
             public boolean mayPlace(ItemStack stack) {
-                return false; // Output slot - no placing items
+                return false;
             }
         });
     }
@@ -107,19 +104,18 @@ public class QuantumFluidCellMenu extends AbstractContainerMenu {
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
-        // Output slot
         if (index == 37) {
             if (!moveItemStackTo(sourceStack, 0, 36, true)) {
                 return ItemStack.EMPTY;
             }
         }
-        // Input slot
+
         else if (index == 36) {
             if (!moveItemStackTo(sourceStack, 0, 36, true)) {
                 return ItemStack.EMPTY;
             }
         }
-        // Player inventory/hotbar to input slot
+
         else {
             if (!moveItemStackTo(sourceStack, 36, 37, false)) {
                 return ItemStack.EMPTY;

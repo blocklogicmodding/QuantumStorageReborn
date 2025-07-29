@@ -60,7 +60,7 @@ public class QuantumFluidCellBlockEntity extends BlockEntity implements MenuProv
             if (slot == 0) {
                 return hasFluidCapability(stack);
             }
-            return slot == 1; // Output slot accepts anything
+            return slot == 1;
         }
     };
 
@@ -84,7 +84,6 @@ public class QuantumFluidCellBlockEntity extends BlockEntity implements MenuProv
         IFluidHandlerItem fluidHandler = inputStack.getCapability(Capabilities.FluidHandler.ITEM);
         if (fluidHandler == null) return;
 
-        // Try to drain fluid from the item
         FluidStack drainedFluid = fluidHandler.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.SIMULATE);
         if (!drainedFluid.isEmpty() && canStoreFluid(drainedFluid)) {
             int stored = storeFluid(drainedFluid);
@@ -104,7 +103,6 @@ public class QuantumFluidCellBlockEntity extends BlockEntity implements MenuProv
             return;
         }
 
-        // Try to fill the item with stored fluid
         if (contents.storedFluidId().isPresent() && contents.amount() > 0) {
             Fluid storedFluid = BuiltInRegistries.FLUID.get(contents.storedFluidId().get());
             FluidStack fluidToFill = new FluidStack(storedFluid, contents.amount());
