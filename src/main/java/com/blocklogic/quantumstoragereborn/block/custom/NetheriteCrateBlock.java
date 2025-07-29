@@ -1,7 +1,6 @@
 package com.blocklogic.quantumstoragereborn.block.custom;
 
 import com.blocklogic.quantumstoragereborn.component.QSRDataComponents;
-import com.blocklogic.quantumstoragereborn.entity.custom.IronCrateBlockEntity;
 import com.blocklogic.quantumstoragereborn.entity.custom.NetheriteCrateBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;

@@ -2,7 +2,6 @@ package com.blocklogic.quantumstoragereborn.container.menu;
 
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
-import com.blocklogic.quantumstoragereborn.entity.custom.CopperCrateBlockEntity;
 import com.blocklogic.quantumstoragereborn.entity.custom.IronCrateBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
