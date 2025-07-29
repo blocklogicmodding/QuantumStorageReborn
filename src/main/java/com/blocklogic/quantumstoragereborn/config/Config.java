@@ -37,7 +37,6 @@ public class Config {
 
     private static void registerCommonConfigs(ModContainer container) {
         storageLimitsConfig();
-        quantumCoreRangesConfig();
         COMMON_CONFIG = COMMON_BUILDER.build();
         SPEC = COMMON_CONFIG;
         container.registerConfig(ModConfig.Type.COMMON, COMMON_CONFIG);
