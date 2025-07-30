@@ -1,7 +1,7 @@
 
 # Quantum Storage Reborn
 
-![RealFilingReborn](https://deonjonker.com/blm/qsr/qsr_banner.png)
+![RealFilingReborn](https://deonjonker.com/blm/qsr/qsr_banner_banner.png)
 
 ## Features
 
