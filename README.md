@@ -1,25 +1,52 @@
 
-Installation information
-=======
+# Quantum Storage Reborn
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+![RealFilingReborn](https://deonjonker.com/blm/qsr/qsr_banner.png)
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## Features
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+### Quantum Cells
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+-   **Quantum Item Cell**: Store virtually unlimited quantities of a single item type
+-   **Quantum Fluid Cell**: Store massive amounts of a single fluid type
+-   Lock cells to preserve item/fluid type even when empty
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+### Tiered Storage Crates
+
+Progressive storage system with five tiers:
+
+-   **Copper Crate**: 27 slots (3x9)
+-   **Iron Crate**: 54 slots (6x9)
+-   **Gold Crate**: 84 slots (7x12)
+-   **Diamond Crate**: 120 slots (8x15)
+-   **Netherite Crate**: 144 slots (8x18)
+
+### Upgrades
+
+Seamlessly upgrade crates in-place using upgrade items:
+
+-   **Iron Crate Upgrade**: Copper → Iron
+-   **Gold Crate Upgrade**: Iron → Gold
+-   **Diamond Crate Upgrade**: Gold → Diamond
+-   **Netherite Crate Upgrade**: Diamond → Netherite
+
+Upgrading preserves all stored items and maintains inventory contents.
+
+## Credits
+
+Inspired by the original _QuantumStorage mod_ by **Gigabut101**
+
+---
+
+## License
+
+All rights reserved. This mod is protected by copyright and may not be redistributed or modified without explicit permission.
+
+**Permitted Uses:**
+
+-   Inclusion in modpacks (public or private)
+-   Content creation (videos, streams, reviews, etc.)
+
+----------
+
+[**Wiki**](https://github.com/blocklogicmodding/RealFilingReborn/wiki) | [**Issue Tracker**](https://github.com/blocklogicmodding/RealFilingReborn/issues) | [**BLM Discord**](https://discord.gg/YtdA3AMqsXe)
