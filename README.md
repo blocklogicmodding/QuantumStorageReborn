@@ -13,7 +13,7 @@
 
 ### Tiered Storage Crates
 
-Progressive storage system with five tiers:
+Progressive storage crates with five tiers that preserves contents when broken:
 
 -   **Copper Crate**: 27 slots (3x9)
 -   **Iron Crate**: 54 slots (6x9)
