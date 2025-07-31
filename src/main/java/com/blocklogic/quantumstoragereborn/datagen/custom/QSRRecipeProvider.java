@@ -134,56 +134,5 @@ public class QSRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('R', Items.REDSTONE)
                 .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
                 .save(recipeOutput);
-
-        // Backpacks
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.COPPER_BACKPACK.get())
-                .pattern("#O#")
-                .pattern("OXO")
-                .pattern("#O#")
-                .define('O', Tags.Items.LEATHERS)
-                .define('#', Items.COPPER_INGOT)
-                .define('X', Tags.Items.CHESTS)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.IRON_BACKPACK.get())
-                .pattern("#O#")
-                .pattern("OXO")
-                .pattern("#O#")
-                .define('O', Tags.Items.LEATHERS)
-                .define('#', Items.IRON_INGOT)
-                .define('X', Tags.Items.CHESTS)
-                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.GOLD_BACKPACK.get())
-                .pattern("#O#")
-                .pattern("OXO")
-                .pattern("#O#")
-                .define('O', Tags.Items.LEATHERS)
-                .define('#', Items.GOLD_INGOT)
-                .define('X', Tags.Items.CHESTS)
-                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.DIAMOND_BACKPACK.get())
-                .pattern("#O#")
-                .pattern("OXO")
-                .pattern("#O#")
-                .define('O', Tags.Items.LEATHERS)
-                .define('#', Items.DIAMOND)
-                .define('X', Tags.Items.CHESTS)
-                .unlockedBy("has_diamond", has(Items.DIAMOND))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, QSRItems.NETHERITE_BACKPACK.get())
-                .pattern("#O#")
-                .pattern("OXO")
-                .pattern("#O#")
-                .define('O', Tags.Items.LEATHERS)
-                .define('#', Items.NETHERITE_INGOT)
-                .define('X', Tags.Items.CHESTS)
-                .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
-                .save(recipeOutput);
     }
 }
