@@ -1,6 +1,7 @@
 package com.blocklogic.quantumstoragereborn.item;
 
 import com.blocklogic.quantumstoragereborn.QuantumStorageReborn;
+import com.blocklogic.quantumstoragereborn.item.custom.CopperBackPackItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -22,7 +23,7 @@ public class QSRItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> COPPER_BACKPACK = ITEMS.register("copper_backpack",
-            () -> new Item(new Item.Properties()));
+            () -> new CopperBackPackItem(new Item.Properties()));
 
     public static final DeferredItem<Item> IRON_BACKPACK = ITEMS.register("iron_backpack",
             () -> new Item(new Item.Properties()));
