@@ -1,15 +1,16 @@
 {
   "creativetab.quantumstoragereborn": "Quantum Storage Reborn",
 
-  "item.quantumstoragereborn.quantum_wrench": "Quantum Wrench",
-  "item.quantumstoragereborn.gold_range_extender": "Gold Range Extender",
-  "item.quantumstoragereborn.diamond_range_extender": "Diamond Range Extender",
-  "item.quantumstoragereborn.netherite_range_extender": "Netherite Range Extender",
-
   "item.quantumstoragereborn.iron_crate_upgrade": "Iron Crate Upgrade",
   "item.quantumstoragereborn.gold_crate_upgrade": "Gold Crate Upgrade",
   "item.quantumstoragereborn.diamond_crate_upgrade": "Diamond Crate Upgrade",
   "item.quantumstoragereborn.netherite_crate_upgrade": "Netherite Crate Upgrade",
+
+  "item.quantumstoragereborn.copper_backpack": "Copper Backpack",
+  "item.quantumstoragereborn.iron_backpack": "Iron Backpack",
+  "item.quantumstoragereborn.gold_backpack": "Gold Backpack",
+  "item.quantumstoragereborn.diamond_backpack": "Diamond Backpack",
+  "item.quantumstoragereborn.netherite_backpack": "Netherite Backpack",
 
   "block.quantumstoragereborn.copper_crate": "Copper Crate",
   "block.quantumstoragereborn.iron_crate": "Iron Crate",

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:copper_ingot"
+    },
+    "O": {
+      "tag": "c:leathers"
+    },
+    "X": {
+      "tag": "c:chests"
+    }
+  },
+  "pattern": [
+    "#O#",
+    "OXO",
+    "#O#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "quantumstoragereborn:copper_backpack"
+  }
+}

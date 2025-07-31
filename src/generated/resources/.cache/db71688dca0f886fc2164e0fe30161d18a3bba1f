@@ -1,5 +1,10 @@
-// 1.21.1	2025-07-30T00:52:59.9740013	Item Models: quantumstoragereborn
+// 1.21.1	2025-07-31T15:46:07.3476287	Item Models: quantumstoragereborn
+add4b5d4f377859be88b987ab369fd7fbc83469a assets/quantumstoragereborn/models/item/copper_backpack.json
+93e6436ffcbbaecfdfd1d1b2f583f55df3cbaf0b assets/quantumstoragereborn/models/item/diamond_backpack.json
 8d3f12b43bf184adc05bafd39c6eb101c1287be2 assets/quantumstoragereborn/models/item/diamond_crate_upgrade.json
+bde92f5ee4db27dbb4000974220e90a7ad719f72 assets/quantumstoragereborn/models/item/gold_backpack.json
 ea774c93e67544c82050bae8ca39b5643ca6e616 assets/quantumstoragereborn/models/item/gold_crate_upgrade.json
+6dc1c87487e8b8305622d7cec7cc6c38012e52c9 assets/quantumstoragereborn/models/item/iron_backpack.json
 9316c71fe61d7f15f71978f1399ff28ed5ea6ce9 assets/quantumstoragereborn/models/item/iron_crate_upgrade.json
+5df9ec5d266fb8fd2693a66d9ed0d70d5edc14f2 assets/quantumstoragereborn/models/item/netherite_backpack.json
 1828dc8cc8276dc347627a0760af59fc6c723ff2 assets/quantumstoragereborn/models/item/netherite_crate_upgrade.json
