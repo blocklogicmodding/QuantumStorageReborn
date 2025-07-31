@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "quantumstoragereborn:copper_backpack",
+    "quantumstoragereborn:iron_backpack",
+    "quantumstoragereborn:gold_backpack",
+    "quantumstoragereborn:diamond_backpack",
+    "quantumstoragereborn:netherite_backpack"
+  ]
+}
