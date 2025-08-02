@@ -3,6 +3,7 @@ package com.blocklogic.quantumstoragereborn.container.menu;
 import com.blocklogic.quantumstoragereborn.config.Config;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
 import com.blocklogic.quantumstoragereborn.entity.custom.QuantumItemCellBlockEntity;
+import com.blocklogic.quantumstoragereborn.util.CrateStorageValidator;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -159,7 +160,7 @@ public class QuantumItemCellMenu extends AbstractContainerMenu {
                 return ItemStack.EMPTY;
             }
         } else {
-            if (blockEntity.canStoreItem(sourceStack)) {
+            if (blockEntity.canStoreItem(sourceStack) && CrateStorageValidator.canStoreInQuantumCell(sourceStack)) {
                 if (!moveItemStackTo(sourceStack, 36, 37, false)) {
                     return ItemStack.EMPTY;
                 }

@@ -3,6 +3,7 @@ package com.blocklogic.quantumstoragereborn.container.menu;
 import com.blocklogic.quantumstoragereborn.block.QSRBlocks;
 import com.blocklogic.quantumstoragereborn.container.QSRMenuTypes;
 import com.blocklogic.quantumstoragereborn.entity.custom.NetheriteCrateBlockEntity;
+import com.blocklogic.quantumstoragereborn.util.CrateSlotItemHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -32,7 +33,7 @@ public class NetheriteCrateMenu extends AbstractContainerMenu {
 
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 18; col++) {
-                this.addSlot(new SlotItemHandler(this.blockEntity.inventory, col + row * 18,
+                this.addSlot(new CrateSlotItemHandler(this.blockEntity.inventory, col + row * 18,
                         8 + col * 18, 8 + row * 18));
             }
         }
@@ -82,6 +83,9 @@ public class NetheriteCrateMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
+        if (blockEntity == null || blockEntity.isRemoved() || level == null) {
+            return false;
+        }
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
                 player, QSRBlocks.NETHERITE_CRATE.get());
     }

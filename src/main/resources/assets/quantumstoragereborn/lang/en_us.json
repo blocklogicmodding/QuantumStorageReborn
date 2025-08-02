@@ -57,6 +57,7 @@
   "gui.quantumstoragereborn.fluid_cell.unlock_tooltip": "Unlock Cell",
   "gui.quantumstoragereborn.fluid_cell.lock_disabled_tooltip": "Cannot lock empty cell",
 
+  "message.quantumstoragereborn.cell_no_crates": "Crates and quantum cells cannot be stored in quantum cells",
   "message.quantumstoragereborn.fluid_cell_wrong_fluid": "This cell only accepts %s",
   "message.quantumstoragereborn.fluid_cell_full": "Cell is full",
   "message.quantumstoragereborn.fluid_cell_empty": "Cell is empty",
