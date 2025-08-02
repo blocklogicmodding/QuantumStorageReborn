@@ -49,4 +49,4 @@ All rights reserved. This mod is protected by copyright and may not be redistrib
 
 ----------
 
-[**Wiki**](https://github.com/blocklogicmodding/RealFilingReborn/wiki) | [**Issue Tracker**](https://github.com/blocklogicmodding/RealFilingReborn/issues) | [**BLM Discord**](https://discord.gg/YtdA3AMqsXe)
+[**Issue Tracker**](https://github.com/blocklogicmodding/QuantumStorageReborn/issues) | [**BLM Discord**](https://discord.gg/YtdA3AMqsXe)
